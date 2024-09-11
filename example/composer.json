@@ -1,0 +1,15 @@
+{
+  "name": "test/meituan",
+  "type": "project",
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/www/wwwroot/lycecho/meituan"
+    },
+    {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  ]
+}

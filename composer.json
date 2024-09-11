@@ -1,0 +1,17 @@
+{
+  "name": "lycecho/meituan",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "lycecho\\meituan\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "lycecho",
+      "email": "599858092@qq.com"
+    }
+  ]
+}

@@ -5,6 +5,10 @@
 ## 官方go版本sdk连接
 [https://developer.meituan.com/admin#/sdk/download](https://developer.meituan.com/admin#/sdk/download)
 
+# 命令安装
+```
+composer require lycecho/meituan
+```
 
 ## 已支持接口
 ### 生活服务 - 到店餐饮 - 团购API - 团购核销
@@ -15,14 +19,23 @@
 |✅|执行验券(新)|    tuangou/ng/coupon/msconsume   |
 |✅|撤销验券|   tuangou/coupon/cancel    |
 |✅|门店验券历史|  tuangou/coupon/queryListByDate     |
-|✅|门店本地验券历史| tuangou/coupon/queryLocalListByDate      |
-|✅||       |
-|✅||       |
-|✅||       |
-|✅||       |
-|✅||       |
-|✅||       |
-|✅||       |
-|✅||       |
 
+# 使用示例
+```
+use lycecho\meituan\mtclient\DefaultMeituanClient;
+use lycecho\meituan\model\tuangoung\coupon\QueryCouponByIdRequest;
 
+// 使用示例
+$client = new DefaultMeituanClient(100567, '***signKey***');
+$appAuthToken = 'xxxxxxxxxx';
+
+$request = new QueryCouponByIdRequest();
+$request->couponCode = 12345;
+try {
+$response = $request->doInvoke($client, $appAuthToken);
+$data = $response->data;
+echo "接口调用成功，得到响应: " . json_encode($data) . "\n";
+} catch (\Exception $e) {
+echo $e->getMessage() . "\n";
+}
+```
